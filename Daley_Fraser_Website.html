@@ -1,0 +1,119 @@
+<style>
+    #entireWebsite{
+        float: left;
+        height: 1000px;
+        width: 100%;
+        border: 10px solid pink;
+
+    }
+    #introContainer{ /*intro container is for my Name and a brief description of the site + a photo*/
+        height: 300px;
+        top: 10px;
+        left: 10px;
+    }
+    #introTextContainer{
+        width: 55%;
+        height: 100%;
+        float: left;
+        
+    }
+    #name{
+        font-size: 64px;
+        margin-left: 45px;
+        margin-top: 30px;
+    }
+    #description{
+        font-size: 20px;
+        margin-left: 50px;
+    }
+    #introPhotoContainer{
+        width: 38%;
+        height: 100%;
+        float: right;
+    }
+    #startAnimation{
+        float: right;
+        margin-top: 200px;
+        font-size: 20px;
+    }
+    #diving{
+        height: 427px;
+        width: 240px;
+        float: right;
+    }
+    #divingImage{
+        height: 100%;
+        width: 100%;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daley Fraser</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = [
+                '../first6/IMG_1581.png',
+                '../first6/IMG_1582.png',
+                '../first6/IMG_1583.png',
+                '../first6/IMG_1584.png',
+                '../first6/IMG_1585.png',
+                '../first6/IMG_1586.png',
+                '../second6/IMG_1587.jpg',
+                '../second6/IMG_1588.jpg',
+                '../second6/IMG_1589.jpg',
+                '../second6/IMG_1590.jpg',
+                '../second6/IMG_1591.jpg',
+                '../second6/IMG_1592.jpg',
+                '../third6/IMG_1593.jpg',
+                '../third6/IMG_1594.jpg',
+                '../third6/IMG_1595.jpg',
+                '../third6/IMG_1596.jpg',
+                '../third6/IMG_1597.jpg',
+                '../third6/IMG_1598.jpg',
+                '../fourth6/IMG_1599.jpg',
+                '../fourth6/IMG_1600.jpg',
+                '../fourth6/IMG_1601.jpg',
+                '../fourth6/IMG_1602.jpg',
+                '../fourth6/IMG_1603.jpg',
+                '../fourth6/IMG_1604.jpg',
+               /* '../Screenshot 2023-09-18 141459.png', // example */
+               /* '../IMG_1369.jpg', // example */
+                // ... Add other image paths
+            ];
+
+            let currentImageIndex = 0;
+            let imageInterval;
+
+            document.getElementById('startAnimation').addEventListener('click', function() {
+                if (!imageInterval) { // Check if the interval isn't already running
+                    imageInterval = setInterval(function() {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        document.getElementById('divingImage').src = images[currentImageIndex];
+                    }, 300);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id ="entireWebsite">
+        <div id="introContainer">
+                
+            <div id="introTextContainer">
+                <div id="name">Daley Fraser</div>
+                <div id="description">Welcome to my website</div>
+            </div>
+            <img src="../IMG_1367.jpg" id="introPhotoContainer"></img> 
+                
+        </div>
+        <div id="diving">
+            <img src="../first6/IMG_1581.png" id="divingImage"></img>
+        </div>
+        <button id="startAnimation">Click for a Flip!</button>
+    </div>
+</body>
+</html>
